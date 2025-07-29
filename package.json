@@ -1,0 +1,32 @@
+{
+  "name": "email2discord",
+  "version": "1.0.0",
+  "description": "read email from pipe and send to discord",
+  "homepage": "https://github.com/PerplexedTheta/email2discord#readme",
+  "bugs": {
+    "url": "https://github.com/PerplexedTheta/email2discord/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PerplexedTheta/email2discord.git"
+  },
+  "license": "Apache-2.0",
+  "author": "undefined <PerplexedTheta>",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.13",
+    "discord.js": "^14.21.0",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "mailparser": "^3.7.4",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
+    "util": "^0.12.5",
+    "uuid": "^11.1.0",
+    "yaml": "^2.8.0"
+  }
+}

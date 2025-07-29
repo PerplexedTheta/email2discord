@@ -1,0 +1,8 @@
+---
+server:
+  port: 8025
+  address: localhost
+spool:
+  baseDir: /var/spool/email2discord
+discord:
+  webhookUrl: insert_your_discord_webhook_here

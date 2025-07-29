@@ -1,0 +1,14 @@
+[Unit]
+Description=email2discord Mail Delivery Agent
+After=network-online.target nss-lookup.target
+Wants=network-online.target
+
+[Service]
+WorkingDirectory=/opt/email2discord
+ExecStart=/bin/sh ./start.sh
+KillMode=process
+User=email2discord
+Group=email2discord
+
+[Install]
+WantedBy=multi-user.target
