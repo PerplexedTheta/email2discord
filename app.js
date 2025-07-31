@@ -92,6 +92,9 @@ Http.createServer((request, response) => {
                 if (sessionStorage.requestData.size > 10485759)
                     sessionStorage.spoolData.spoolFile = undefined;
 
+                if (sessionStorage.mailData.payload.subject == undefined)
+		    sessionStorage.mailData.payload.subject = '';
+
                 discord.sendMessage({
                     from: 'Mailer daemon at ' + Os.hostname(),
                     title: '*You\'ve got mail!',
