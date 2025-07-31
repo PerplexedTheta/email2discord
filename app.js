@@ -7,10 +7,12 @@ const Dayjs = require('dayjs');
 const Os = require('os');
 
 const { config: Config } = require(Path.resolve(__dirname, 'config.js'));
+const { helpers: Helpers } = require(Path.resolve(__dirname, 'helpers.js'));
 const { logger: Logger } = require(Path.resolve(__dirname, 'logger.js'));
 const { discord: Discord } = require(Path.resolve(__dirname, 'discord.js'));
 
 const config = new Config(Fs.readFileSync(Path.resolve(__dirname, 'config.yaml'), 'utf8'));
+const helpers = new Helpers;
 const logger = new Logger;
 const discord = new Discord(config);
 
@@ -93,10 +95,12 @@ Http.createServer((request, response) => {
                 discord.sendMessage({
                     from: 'Mailer daemon at ' + Os.hostname(),
                     title: '*You\'ve got mail!',
-                    content: 
+                    content:
                         'From: ' + sessionStorage.mailData.payload.from.text + "\n" +
                         'Subject: ' + sessionStorage.mailData.payload.subject + "\n" +
-                        "\n" +
+                        '```' + "\n" +
+                        helpers._truncateText(sessionStorage.mailData.payload.text, 3072) +
+                        '```' + "\n" +
                         'A copy of this email is retained on the server for further reading' + "\n",
                     files: [sessionStorage.spoolData.spoolFile],
                 });
