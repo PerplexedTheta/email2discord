@@ -6,7 +6,7 @@ Wants=network-online.target
 [Service]
 WorkingDirectory=/opt/email2discord
 ExecStart=/bin/sh ./start.sh
-KillMode=process
+KillMode=mixed
 User=email2discord
 Group=email2discord
 
